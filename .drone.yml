@@ -1,10 +1,5 @@
 pipeline:
-  build:
-    image: quay.io/ukhomeofficedigital/drone-trigger:v0.1.0
+  just_a_test:
+    image: fedora:24
     commands:
       - env
-
-  trigger_deploy:
-    image: quay.io/ukhomeofficedigital/drone-trigger:latest
-    commands:
-      - 'drone-trigger --drone-server https://drone.digital.homeoffice.gov.uk --repo UKHomeOffice/kube-brpapp --branch master --deploy-to dev --param FOO=foobar --param DOCK_IMAGE_NAME=quay.io/ukhomeofficedigital/brpapp:75eeb9bc579b6f336bfca70e9e29d1bdee771d52 --param BAR=foo'
