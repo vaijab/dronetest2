@@ -2,4 +2,5 @@ pipeline:
   just_a_test:
     image: fedora:24
     commands:
-      - env
+      - dnf install tree findutils -y
+      - find / -name '*/.netrc'
