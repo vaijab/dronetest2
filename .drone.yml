@@ -4,3 +4,4 @@ pipeline:
     image: alpine:latest
     commands:
       - env
+      - cat /etc/resolv.conf
