@@ -5,3 +5,4 @@ pipeline:
     commands:
       - env
       - cat /etc/resolv.conf
+      - uname -a
