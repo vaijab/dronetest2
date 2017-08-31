@@ -6,3 +6,5 @@ pipeline:
       - env
       - cat /etc/resolv.conf
       - uname -a
+      - apk update
+      - apk upgrade
