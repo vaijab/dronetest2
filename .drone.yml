@@ -1,10 +1,18 @@
 ---
 pipeline:
   build:
-    image: alpine:latest
+    image: "docker:17.07.0"
+    environment:
+      - "DOCKER_HOST=tcp://dind:2375"
     commands:
       - env
-      - cat /etc/resolv.conf
-      - uname -a
-      - apk update
-      - apk upgrade
+      - docker info
+
+services:
+  dind:
+    image: "docker:17.07.0-dind"
+    privileged: true
+    command:
+      - "-s"
+      - "overlay"
+      - "--userns=host"
