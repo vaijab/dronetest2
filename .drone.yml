@@ -6,7 +6,6 @@ pipeline:
       - "DOCKER_HOST=tcp://dind:2375"
     commands:
       - env
-      - sleep 10
       - docker info
 
 services:
