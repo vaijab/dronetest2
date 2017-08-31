@@ -13,10 +13,8 @@ services:
   dind:
     image: "docker:17.07.0-dind"
     privileged: true
-    entrypoint: ["dockerd"]
     command:
-      - "-D"
-      - "--host"
-      - "tcp://0.0.0.0:2375"
+      # - "--host"
+      # - "tcp://0.0.0.0:2375"
       - "-s"
       - "overlay"
