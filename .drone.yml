@@ -12,7 +12,9 @@ services:
   dind:
     image: "docker:17.07.0-dind"
     privileged: true
+    entrypoint: ["dockerd"]
     command:
+      - "-D"
       - "-s"
       - "overlay"
       - "--userns-remap=default"
