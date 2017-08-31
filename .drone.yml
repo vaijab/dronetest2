@@ -3,15 +3,15 @@ pipeline:
   build:
     image: "docker:17.07.0"
     environment:
-      - "DOCKER_HOST=tcp://dind:2375"
+      - "DOCKER_HOST=tcp://${DRONE_HOSTNAME}:2375"
     commands:
       - env
       - docker info
 
-services:
-  dind:
-    image: "docker:17.07.0-dind"
-    privileged: true
-    command:
-      - "-s"
-      - "overlay"
+# services:
+#   dind:
+#     image: "docker:17.07.0-dind"
+#     privileged: true
+#     command:
+#       - "-s"
+#       - "overlay"
