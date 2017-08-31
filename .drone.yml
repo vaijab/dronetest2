@@ -17,6 +17,6 @@ services:
     command:
       - "-D"
       - "--host"
-      - "tcp://127.0.0.1:2375"
+      - "tcp://0.0.0.0:2375"
       - "-s"
       - "overlay"
