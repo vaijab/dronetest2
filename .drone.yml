@@ -15,4 +15,4 @@ services:
     command:
       - "-s"
       - "overlay"
-      - "--userns=host"
+      - "--userns-remap=default"
