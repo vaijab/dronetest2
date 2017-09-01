@@ -5,6 +5,9 @@ pipeline:
     environment:
       - "DOCKER_HOST=tcp://172.17.0.1:2375"
     commands:
-      - env
       - docker info
-      - docker run --rm alpine /bin/date
+      - docker run --rm radial/busyboxplus:curl http://nginx
+
+services:
+  nginx:
+    image: nginx
