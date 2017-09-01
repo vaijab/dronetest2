@@ -5,6 +5,7 @@ pipeline:
     environment:
       - "DOCKER_HOST=tcp://172.17.0.1:2375"
     commands:
+      - env
       - docker ps
       - docker network ls
       - "docker run --rm byrnedo/alpine-curl http://nginx:80"
