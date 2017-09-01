@@ -2,18 +2,16 @@
 pipeline:
   build:
     image: "docker:17.07.0"
-    networks:
-      - bridge
     environment:
       - "DOCKER_HOST=tcp://172.17.0.1:2375"
     commands:
       - env
+      - cat /etc/resolv.conf
       - docker ps
       - docker network ls
       - "docker run --rm byrnedo/alpine-curl http://nginx:80"
+      - "docker run --rm alpine cat /etc/resolv.conf"
 
 services:
   nginx:
-    networks:
-      - bridge
     image: nginx
