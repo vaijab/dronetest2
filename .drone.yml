@@ -9,7 +9,7 @@ pipeline:
       - cat /etc/resolv.conf
       - docker ps
       - docker network ls
-      - "docker run --rm byrnedo/alpine-curl http://nginx:80"
+      # - "docker run --rm byrnedo/alpine-curl http://nginx:80"
       - "docker run --rm alpine cat /etc/resolv.conf"
 
 services:
