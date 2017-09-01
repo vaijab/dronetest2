@@ -10,8 +10,9 @@ pipeline:
       # - docker ps
       # - docker network ls
       # - "docker run --rm byrnedo/alpine-curl http://nginx:80"
-      - "docker run --rm alpine cat /etc/resolv.conf"
-      - "docker run --rm alpine cat /etc/hosts"
+      - "docker run --dns 127.0.0.11 --rm alpine cat /etc/resolv.conf"
+      - "docker run --dns 127.0.0.11 --rm alpine cat /etc/hosts"
+
   curl:
     image: "fedora:26"
     environment:
