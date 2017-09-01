@@ -9,9 +9,10 @@ pipeline:
       - cat /etc/hosts
       # - docker ps
       # - docker network ls
+      - "docker inspect $(docker ps -q)"
       - "docker run --dns 127.0.0.11 --rm alpine cat /etc/resolv.conf"
       - "docker run --dns 127.0.0.11 --rm alpine cat /etc/hosts"
-      - "docker run --dns 127.0.0.11 --rm byrnedo/alpine-curl http://nginx:80"
+      # - "docker run --dns 127.0.0.11 --rm byrnedo/alpine-curl http://nginx:80"
 
   # curl:
   #   image: "fedora:26"
@@ -20,6 +21,6 @@ pipeline:
   #   commands:
   #     - curl http://nginx:80
 
-services:
-  nginx:
-    image: nginx
+# services:
+#   nginx:
+#     image: nginx
