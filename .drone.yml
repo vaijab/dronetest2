@@ -5,14 +5,19 @@ pipeline:
     environment:
       - "DOCKER_HOST=tcp://172.17.0.1:2375"
     commands:
-      - env
       - cat /etc/resolv.conf
       - cat /etc/hosts
-      - docker ps
-      - docker network ls
+      # - docker ps
+      # - docker network ls
       # - "docker run --rm byrnedo/alpine-curl http://nginx:80"
       - "docker run --rm alpine cat /etc/resolv.conf"
       - "docker run --rm alpine cat /etc/hosts"
+  curl:
+    image: "fedora:26"
+    environment:
+      - "DOCKER_HOST=tcp://172.17.0.1:2375"
+    commands:
+      - curl http://nginx:80
 
 services:
   nginx:
