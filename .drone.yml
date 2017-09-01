@@ -7,10 +7,12 @@ pipeline:
     commands:
       - env
       - cat /etc/resolv.conf
+      - cat /etc/hosts
       - docker ps
       - docker network ls
       # - "docker run --rm byrnedo/alpine-curl http://nginx:80"
       - "docker run --rm alpine cat /etc/resolv.conf"
+      - "docker run --rm alpine cat /etc/hosts"
 
 services:
   nginx:
