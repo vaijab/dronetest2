@@ -2,6 +2,7 @@
 pipeline:
   build:
     image: "docker:17.07.0"
+    network_mode: bridge
     environment:
       - "DOCKER_HOST=tcp://172.17.0.1:2375"
     commands:
@@ -11,5 +12,6 @@ pipeline:
       - "docker run --rm byrnedo/alpine-curl http://nginx:80"
 
 services:
+  network_mode: bridge
   nginx:
     image: nginx
