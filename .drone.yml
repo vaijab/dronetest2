@@ -12,6 +12,6 @@ pipeline:
       - "docker run --rm byrnedo/alpine-curl http://nginx:80"
 
 services:
-  network_mode: bridge
   nginx:
+    network_mode: bridge
     image: nginx
